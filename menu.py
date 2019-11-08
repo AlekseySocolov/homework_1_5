@@ -1,4 +1,6 @@
+import function
 
+function.f_copy_folder_fil()
 while True:
     print('=' * 40)
     print('МЕНЮ:')
@@ -17,7 +19,7 @@ while True:
     print('*' * 40)
     choice = input('Выберите пункт меню: ')
     if choice == '1':
-        personal_account = f_account_replenishment(personal_account)
+        f_create_folder()
     elif choice == '2':
         personal_account = f_purchase(personal_account)
     elif choice == '3':
