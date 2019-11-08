@@ -20,12 +20,19 @@ def f_del_folder_fil():
 
 # копировать (файл/папку)
 def f_copy_folder_fil():
-    name_copy1_folder_fil = input('Введити имя копируемой папки/файла')
-    name_copy2_folder_fil = input('Введити имя для новой папки/файла')
+    name_copy1_folder_fil = input('Введити имя копируемой папки/файла ')
     if os.path.exists(name_copy1_folder_fil):
+        name_copy2_folder_fil = input('Введити имя для новой папки/файла ')
         if not os.path.exists(name_copy2_folder_fil):
             shutil.copyfile(name_copy1_folder_fil,name_copy2_folder_fil)
         else:
             print('Папка/файл с таким именем уже есть!')
     else:
         print('Папки/файла с таким именем нет!')
+
+# просмотр содержимого рабочей директории
+def f_view_working_directory ():
+    print(os.listdir())
+
+# посмотреть только папки
+def f_view_folder():
