@@ -1,6 +1,5 @@
 import function
 
-function.f_copy_folder_fil()
 while True:
     print('=' * 40)
     print('МЕНЮ:')
@@ -18,12 +17,24 @@ while True:
     print('*' * 40)
     choice = input('Выберите пункт меню: ')
     if choice == '1':
-        f_create_folder()
+        function.f_create_folder()
     elif choice == '2':
-        personal_account = f_purchase(personal_account)
+        function.f_del_folder_file()
     elif choice == '3':
-        f_purchase_history(personal_account)
+        function.f_copy_folder_file()
     elif choice == '4':
+        function.f_view_working_directory()
+    elif choice == '5':
+        function.f_view_folder()
+    elif choice == '6':
+        function.f_view_file()
+    elif choice == '7':
+        function.f_view_os()
+    elif choice == '8':
+        function.f_program_creator()
+    elif choice =='9':
+
+
         print('#' * 40)
         print('ВЫ ВЫШЛИ ИЗ ПРОГРАММЫ!')
         break
