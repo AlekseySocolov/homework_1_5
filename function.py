@@ -11,7 +11,7 @@ def f_create_folder():
         print('Папка с таким именем уже есть!')
 
 # удалить папку/файл
-def f_del_folder_fil():
+def f_del_folder_file():
     name_folder_fil = input ('Введите имя удаляемой папки/файла ')
     if os.path.exists(name_folder_fil):
         os.rmdir(name_folder_fil)
@@ -19,7 +19,7 @@ def f_del_folder_fil():
         print('Папки/файла с таким именем нет!')
 
 # копировать (файл/папку)
-def f_copy_folder_fil():
+def f_copy_folder_file():
     name_copy1_folder_fil = input('Введити имя копируемой папки/файла ')
     if os.path.exists(name_copy1_folder_fil):
         name_copy2_folder_fil = input('Введити имя для новой папки/файла ')
@@ -36,3 +36,16 @@ def f_view_working_directory ():
 
 # посмотреть только папки
 def f_view_folder():
+    names = os.listdir()
+    for name in names:
+        fullname = os.path.join(name)  # получаем полное имя
+        if os.path.isdir(fullname):
+            print (fullname)
+
+# посмотреть только файлы
+def f_view_file():
+    names = os.listdir()
+    for name in names:
+        fullname = os.path.join(name)  # получаем полное имя
+        if os.path.isfile(fullname):
+            print (fullname)
