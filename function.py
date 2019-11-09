@@ -1,6 +1,8 @@
 # ФУНКЦИИ
 import os
 import shutil
+import sys
+import platform
 
 # добавить папку
 def f_create_folder():
@@ -49,3 +51,15 @@ def f_view_file():
         fullname = os.path.join(name)  # получаем полное имя
         if os.path.isfile(fullname):
             print (fullname)
+
+# просмотр информации об операционной системе
+def f_view_os():
+    print(os.name)
+    print(sys.platform)
+    print(platform.uname())
+
+# создатель программы
+def f_program_creator():
+    print('Program_creator: Alexey Sokolov from Russia from Orenburg')
+
+
