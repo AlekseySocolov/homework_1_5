@@ -1,4 +1,6 @@
 import function
+import quiz
+import atm
 
 while True:
     print('=' * 40)
@@ -32,9 +34,11 @@ while True:
         function.f_view_os()
     elif choice == '8':
         function.f_program_creator()
-    elif choice =='9':
-
-
+    elif choice == '9':
+        quiz.f_quiz()
+    elif choice == '10':
+        atm.f_atm()
+    elif choice == '11':
         print('#' * 40)
         print('ВЫ ВЫШЛИ ИЗ ПРОГРАММЫ!')
         break
