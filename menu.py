@@ -33,7 +33,7 @@ while True:
     elif choice == '7':
         function.f_view_os()
     elif choice == '8':
-        function.f_program_creator()
+        print(function.f_program_creator())
     elif choice == '9':
         quiz.f_quiz()
     elif choice == '10':

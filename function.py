@@ -1,8 +1,4 @@
-# ФУНКЦИИ
-import os
-import shutil
-import sys
-import platform
+
 
 # добавить папку
 def f_create_folder():
@@ -14,9 +10,9 @@ def f_create_folder():
 
 # удалить папку/файл
 def f_del_folder_file():
-    name_folder_fil = input ('Введите имя удаляемой папки/файла ')
-    if os.path.exists(name_folder_fil):
-        os.rmdir(name_folder_fil)
+    name_folder_file = input ('Введите имя удаляемой папки/файла ')
+    if os.path.exists(name_folder_file):
+        os.rmdir(name_folder_file)
     else:
         print('Папки/файла с таким именем нет!')
 
@@ -60,6 +56,7 @@ def f_view_os():
 
 # создатель программы
 def f_program_creator():
-    print('Program_creator: Alexey Sokolov from Russia from Orenburg')
+    return 'Program_creator: Alexey Sokolov from Russia from Orenburg'
+
 
 
