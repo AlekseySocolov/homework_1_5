@@ -19,9 +19,11 @@ while True:
     print('*' * 40)
     choice = input('Выберите пункт меню: ')
     if choice == '1':
-        function.f_create_folder()
+        name_folder = input('Введите имя создаваемой папки ')
+        print(function.f_create_folder(name_folder))
     elif choice == '2':
-        function.f_del_folder_file()
+        name_folder_file = input('Введите имя удаляемой папки/файла ')
+        print(function.f_del_folder_file(name_folder_file))
     elif choice == '3':
         function.f_copy_folder_file()
     elif choice == '4':

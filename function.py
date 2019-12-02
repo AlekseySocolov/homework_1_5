@@ -1,20 +1,18 @@
-
+import os
 
 # добавить папку
-def f_create_folder():
-    name_folder = input('Введите имя создаваемой папки ')
+def f_create_folder(name_folder):
     if not os.path.exists(name_folder):
         os.mkdir(name_folder)
     else:
-        print('Папка с таким именем уже есть!')
+        return 'Папка с таким именем уже есть!'
 
 # удалить папку/файл
-def f_del_folder_file():
-    name_folder_file = input ('Введите имя удаляемой папки/файла ')
+def f_del_folder_file(name_folder_file):
     if os.path.exists(name_folder_file):
         os.rmdir(name_folder_file)
     else:
-        print('Папки/файла с таким именем нет!')
+        return 'Папки/файла с таким именем нет!'
 
 # копировать (файл/папку)
 def f_copy_folder_file():
