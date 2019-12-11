@@ -3,13 +3,12 @@ def f_atm():
     import pickle
 
     try:
-        if os.path.exists('history.data'):
-            with open('history.data', 'rb') as f:
-                personal_account = pickle.load(f)
-    except EOFError:
+        with open('history.data', 'rb') as f:
+            personal_account = pickle.load(f)
+    except FileNotFoundError:
         personal_account = [0, []]  # переменная персонального счета - сумма на счете и история покупок
-        print(personal_account)
         print('История операций отсутствует')
+
 
     # функция проверки - является ли строка числом типа float
     def is_digit(string):
@@ -77,16 +76,12 @@ def f_atm():
         elif choice == '3':
             f_purchase_history(personal_account)
         elif choice == '4':
-            print('#' * 40)
-            print('ВЫ ВЫШЛИ ИЗ ПРОГРАММЫ!')
             with open('history.data', 'wb') as f:
                 # записываем в файл историю операций и баланс счета
                 pickle.dump(personal_account, f)
+            print('#' * 40)
+            print('ВЫ ВЫШЛИ ИЗ ПРОГРАММЫ!')
             break
         else:
             print('*' * 40)
             print('Неверный пункт меню')
-
-if __name__ == '_main_':
-    print('Проверка фукции')
-    f_atm()
