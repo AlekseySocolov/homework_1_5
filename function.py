@@ -1,24 +1,18 @@
-# ФУНКЦИИ
 import os
-import shutil
-import sys
-import platform
 
 # добавить папку
-def f_create_folder():
-    name_folder = input('Введите имя создаваемой папки ')
+def f_create_folder(name_folder):
     if not os.path.exists(name_folder):
         os.mkdir(name_folder)
     else:
-        print('Папка с таким именем уже есть!')
+        return 'Папка с таким именем уже есть!'
 
 # удалить папку/файл
-def f_del_folder_file():
-    name_folder_fil = input ('Введите имя удаляемой папки/файла ')
-    if os.path.exists(name_folder_fil):
-        os.rmdir(name_folder_fil)
+def f_del_folder_file(name_folder_file):
+    if os.path.exists(name_folder_file):
+        os.rmdir(name_folder_file)
     else:
-        print('Папки/файла с таким именем нет!')
+        return 'Папки/файла с таким именем нет!'
 
 # копировать (файл/папку)
 def f_copy_folder_file():
@@ -36,21 +30,31 @@ def f_copy_folder_file():
 def f_view_working_directory ():
     print(os.listdir())
 
+# сохранение информации о содержимом рабочей директории
+def f_save_info_directory():
+    with open('listdir.txt', 'w') as f:
+        f.write(f'files:{f_view_file()}\n')
+        f.write(f'dirs:{f_view_folder()}\n')
+
 # посмотреть только папки
 def f_view_folder():
     names = os.listdir()
+    list_folders = []
     for name in names:
         fullname = os.path.join(name)  # получаем полное имя
         if os.path.isdir(fullname):
-            print (fullname)
+            list_folders.append(fullname)
+    return list_folders
 
 # посмотреть только файлы
 def f_view_file():
     names = os.listdir()
+    list_files = []
     for name in names:
         fullname = os.path.join(name)  # получаем полное имя
         if os.path.isfile(fullname):
-            print (fullname)
+            list_files.append(fullname)
+    return list_files
 
 # просмотр информации об операционной системе
 def f_view_os():
@@ -60,6 +64,7 @@ def f_view_os():
 
 # создатель программы
 def f_program_creator():
-    print('Program_creator: Alexey Sokolov from Russia from Orenburg')
+    return 'Program_creator: Alexey Sokolov from Russia from Orenburg'
+
 
 

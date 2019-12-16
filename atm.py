@@ -1,5 +1,14 @@
 def f_atm():
-    personal_account = [0,[]]  # переменная персонального счета - сумма на счете и история покупок
+    import os
+    import pickle
+
+    try:
+        with open('history.data', 'rb') as f:
+            personal_account = pickle.load(f)
+    except FileNotFoundError:
+        personal_account = [0, []]  # переменная персонального счета - сумма на счете и история покупок
+        print('История операций отсутствует')
+
 
     # функция проверки - является ли строка числом типа float
     def is_digit(string):
@@ -67,6 +76,9 @@ def f_atm():
         elif choice == '3':
             f_purchase_history(personal_account)
         elif choice == '4':
+            with open('history.data', 'wb') as f:
+                # записываем в файл историю операций и баланс счета
+                pickle.dump(personal_account, f)
             print('#' * 40)
             print('ВЫ ВЫШЛИ ИЗ ПРОГРАММЫ!')
             break
