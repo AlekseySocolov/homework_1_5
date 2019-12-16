@@ -45,8 +45,8 @@ def test_sqrt():
         assert sqrt(i*i) == i
 
 def test_pow():
-    for i in range(100):
-        assert pow(i,2) == i**2
+     for i in range(100):
+         assert pow(i,2) == i**2
 
 def test_hypot():
     for i in range(100):
