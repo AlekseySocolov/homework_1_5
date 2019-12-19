@@ -55,8 +55,8 @@ def f_atm():
     def f_purchase_history (account):
         print('*' * 40)
         print('ИСТОРИЯ ПОКУПОК:')
-        for tandem in account[1]:
-            print(f'Товар: {tandem[0]} Цена: {tandem[1]}')
+        [print(f'Товар: {tandem[0]} Цена: {tandem[1]}') for tandem in account[1]]
+
 
     while True:
         print('*' * 40)

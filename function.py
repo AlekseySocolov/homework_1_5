@@ -2,17 +2,14 @@ import os
 
 # добавить папку
 def f_create_folder(name_folder):
-    if not os.path.exists(name_folder):
-        os.mkdir(name_folder)
-    else:
-        return 'Папка с таким именем уже есть!'
+    return os.mkdir(name_folder) if not os.path.exists(name_folder) else 'Папка с таким именем уже есть!'
 
 # удалить папку/файл
 def f_del_folder_file(name_folder_file):
-    if os.path.exists(name_folder_file):
-        os.rmdir(name_folder_file)
-    else:
-        return 'Папки/файла с таким именем нет!'
+    return os.rmdir(name_folder_file) if os.path.exists(name_folder_file) else 'Папки/файла с таким именем нет!'
+
+
+
 
 # копировать (файл/папку)
 def f_copy_folder_file():
@@ -20,7 +17,7 @@ def f_copy_folder_file():
     if os.path.exists(name_copy1_folder_fil):
         name_copy2_folder_fil = input('Введити имя для новой папки/файла ')
         if not os.path.exists(name_copy2_folder_fil):
-            shutil.copyfile(name_copy1_folder_fil,name_copy2_folder_fil)
+            shutil.copyfile(name_copy1_folder_fil, name_copy2_folder_fil)
         else:
             print('Папка/файл с таким именем уже есть!')
     else:
